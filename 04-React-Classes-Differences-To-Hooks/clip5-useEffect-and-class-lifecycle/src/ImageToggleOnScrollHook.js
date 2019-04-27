@@ -12,7 +12,8 @@ const ImageTogglerOnScrollHook = ({ primaryImg, secondaryImg }) => {
       return () => {
         window.removeEventListener("scroll", scrollHandler);
       };
-    }, isLoading);
+    },
+    [isLoading]);
 
   const [inView, setInView] = useState(false);
 
