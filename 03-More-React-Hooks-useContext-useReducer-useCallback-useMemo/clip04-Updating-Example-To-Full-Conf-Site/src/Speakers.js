@@ -4,8 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../static/site.css";
 import { Header } from "../src/Header";
 import { Menu } from "../src/Menu";
-import SpeakerData from "./SpeakerData";
 import SpeakerDetail from "./SpeakerDetail";
+
+import speakerData from "./data/speakers.json";
 
 const Speakers = ({}) => {
   const [speakingSaturday, setSpeakingSaturday] = useState(true);
@@ -22,7 +23,7 @@ const Speakers = ({}) => {
       }, 1000);
     }).then(() => {
       setIsLoading(false);
-      const speakerListServerFilter = SpeakerData.filter(({ sat, sun }) => {
+      const speakerListServerFilter = speakerData.filter(({ sat, sun }) => {
         return (speakingSaturday && sat) || (speakingSunday && sun);
       });
       setSpeakerList(speakerListServerFilter);
