@@ -1,5 +1,5 @@
-class InputElementClassHistory extends
-    React.Component {
+class InputElementClassHistory extends React.Component {
+
   state = {
     inputText: "",
     historyList: []
@@ -16,16 +16,18 @@ class InputElementClassHistory extends
   };
 
   render() {
+    const { inputText, historyList } = this.props;
+
     return (
       <div>
         <input placeholder="Enter Some Text"
                onChange={this.handleChange} />
         <br />
-        {this.state.inputText}
+        {inputText}
         <hr />
         <br />
         <ul>
-          {this.state.historyList.map(rec => {
+          {historyList.map(rec => {
             return <div>{rec}</div>;
           })}
         </ul>
