@@ -33,7 +33,7 @@ const dataFetchReducer = (state, action) => {
         data: newData
       };
     default:
-      throw new Error();
+      return state;
   }
 };
 
